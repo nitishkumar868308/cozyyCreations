@@ -3,13 +3,19 @@ import HomeSlider from "@/components/HomeSlider/HomeSlider";
 import ProductSlider from "@/components/Product/Product";
 import TestMonial from "@/components/Testmonial/TestMonial";
 import StorySection from "@/components/StorySection/StorySection";
+import SectionNew from '@/app/check/page'
+import PriceSectionHomePage from "@/components/PriceSectionHomePage/PriceSectionHomePage";
+import NewProductPage from "@/components/NewProductPage/NewProductPage";
 
 export default function Home() {
   return (
     <>
       <HomeSlider />
       <StorySection />
-      <ProductSlider showSection={['featured', 'new']} />
+      <SectionNew />
+      <PriceSectionHomePage />
+      {/* <ProductSlider showSection={['featured', 'new']} /> */}
+      <NewProductPage />
       <TestMonial />
     </>
   );

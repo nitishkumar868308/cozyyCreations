@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 <div className="flex items-center justify-center w-full px-4 md:px-8">
                     <a href="/" target="_blank" rel="noopener noreferrer">
                         <Image
-                            src="/image/logo PNG.png"
+                            src="/image/80x80 logo.png"
                             alt="Logo"
                             width={80}
                             height={80}

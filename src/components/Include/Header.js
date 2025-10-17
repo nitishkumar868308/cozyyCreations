@@ -176,14 +176,14 @@ const Header = () => {
     console.log("baseUrl", baseUrl)
     return (
         <>
-            <header className="w-full bg-[#161619] shadow-md md:relative fixed md:static top-0 z-50">
+            <header className="w-full bg-white shadow-md md:relative fixed md:static top-0 z-50">
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between px-6 py-3">
 
                     {/* Logo */}
                     <div className="flex items-center gap-2">
                         <Link href="/">
                             <img
-                                src="/image/HWM LOGO 1 GREY 100.png"
+                                src="/image/80x80 logo.png"
                                 alt="Logo"
                                 className="h-20 w-24 object-contain"
                             />
@@ -250,60 +250,65 @@ const Header = () => {
                                     >
                                         <Link
                                             href={href}
-                                            className={`font-functionPro px-4 py-2 rounded-lg font-medium transition cursor-pointer ${isActive ? "bg-white text-[#161619]" : "text-white hover:bg-gray-700"
+                                            className={`font-functionPro px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
+                                            ${isActive
+                                                    ? "bg-[#698467]/80 text-white shadow-inner"
+                                                    : "text-[#698467] hover:bg-[#698467]/10 hover:scale-105"
                                                 }`}
                                         >
                                             {item}
                                         </Link>
 
                                         {/* Dropdown only for Categories */}
-                                        {item === "Categories" && openItem === "Categories" && (
-                                            <div className="absolute left-1/2 transform -translate-x-[48%]
+                                        {
+                                            item === "Categories" && openItem === "Categories" && (
+                                                <div className="absolute left-1/2 transform -translate-x-[48%]
  top-full mt-1 w-[1400px] bg-[#161619] text-white shadow-lg py-8 px-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 z-50">
-                                                {mappedCategories.map((cat, index) => {
-                                                    console.log("cat?.img", cat?.img)
-                                                    const imgSrc = cat?.img
-                                                        ? encodeURI(cat.img.startsWith("http") ? cat.img : cat.img)
-                                                        : "/default-image.jpg";
-                                                    console.log("imgSrc", imgSrc);
+                                                    {mappedCategories.map((cat, index) => {
+                                                        console.log("cat?.img", cat?.img)
+                                                        const imgSrc = cat?.img
+                                                            ? encodeURI(cat.img.startsWith("http") ? cat.img : cat.img)
+                                                            : "/default-image.jpg";
+                                                        console.log("imgSrc", imgSrc);
 
-                                                    return (
-                                                        <div
-                                                            key={cat.id || `${cat.name}-${index}`}
-                                                            className="flex items-start gap-6 border-b border-gray-700 pb-6 last:border-0"
-                                                        >
+                                                        return (
+                                                            <div
+                                                                key={cat.id || `${cat.name}-${index}`}
+                                                                className="flex items-start gap-6 border-b border-gray-700 pb-6 last:border-0"
+                                                            >
 
-                                                            <div className="flex-1">
-                                                                <h3 className=" text-lg mb-3 font-functionPro">{cat.name}</h3>
-                                                                <ul className="space-y-2">
-                                                                    {cat.sub.map((sub) => (
-                                                                        <li key={sub}>
-                                                                            <Link
-                                                                                href={`/categories?category=${encodeURIComponent(cat.name)}&&subcategory=${encodeURIComponent(sub)}`}
-                                                                                className="text-gray-300 hover:text-white transition font-functionPro"
-                                                                            >
-                                                                                {sub}
-                                                                            </Link>
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
+                                                                <div className="flex-1">
+                                                                    <h3 className=" text-lg mb-3 font-functionPro">{cat.name}</h3>
+                                                                    <ul className="space-y-2">
+                                                                        {cat.sub.map((sub) => (
+                                                                            <li key={sub}>
+                                                                                <Link
+                                                                                    href={`/categories?category=${encodeURIComponent(cat.name)}&&subcategory=${encodeURIComponent(sub)}`}
+                                                                                    className="text-gray-300 hover:text-white transition font-functionPro"
+                                                                                >
+                                                                                    {sub}
+                                                                                </Link>
+                                                                            </li>
+                                                                        ))}
+                                                                    </ul>
+                                                                </div>
+
+
+                                                                <div className="w-40 h-40 relative rounded-lg overflow-hidden flex-shrink-0 cursor-pointer">
+                                                                    <Image
+                                                                        src={imgSrc}
+                                                                        alt={cat.name}
+                                                                        fill
+                                                                        className="object-cover hover:scale-105 transition-transform duration-300"
+                                                                        unoptimized
+                                                                    />
+                                                                </div>
                                                             </div>
-
-
-                                                            <div className="w-40 h-40 relative rounded-lg overflow-hidden flex-shrink-0 cursor-pointer">
-                                                                <Image
-                                                                    src={imgSrc}
-                                                                    alt={cat.name}
-                                                                    fill
-                                                                    className="object-cover hover:scale-105 transition-transform duration-300"
-                                                                    unoptimized
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        )}
+                                                        )
+                                                    })}
+                                                </div>
+                                            )
+                                        }
                                     </li>
                                 );
                             })}
@@ -377,13 +382,13 @@ const Header = () => {
                     </nav> */}
 
                     {/* Icons */}
-                    <div className="font-functionPro flex items-center gap-4 md:gap-6">
+                    <div className="font-functionPro  flex items-center gap-4 md:gap-6">
                         <SearchPage />
 
                         <button onClick={() => setIsOpen(true)} className="relative cursor-pointer">
-                            <ShoppingCart className="h-6 w-6 text-white" />
+                            <ShoppingCart className="h-6 w-6 text-[#698467]" />
                             {userCartCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-[#698467] text-xs px-1.5 py-0.5 rounded-full">
                                     {userCartCount}
                                 </span>
                             )}
@@ -458,14 +463,14 @@ const Header = () => {
 
                                                         {/* Price */}
                                                         <p className="text-sm font-medium text-gray-700 mt-1">
-                                                             {item.currency} {item.currencySymbol}
+                                                            {item.currency} {item.currencySymbol}
                                                             {(item.pricePerItem * item.quantity).toFixed(2)}
                                                         </p>
                                                     </div>
 
                                                     {/* Total Price */}
                                                     <div className="text-sm font-bold text-gray-900 whitespace-nowrap">
-                                                         {item.currency} {item.currencySymbol}
+                                                        {item.currency} {item.currencySymbol}
                                                         {(item.pricePerItem * item.quantity).toFixed(2)}
                                                     </div>
                                                 </div>
@@ -524,13 +529,13 @@ const Header = () => {
                                         </div>
                                     </div> */}
                                     <div className="flex items-center gap-3 cursor-pointer group">
-                                    
-                                        <div className="text-white text-sm sm:text-base md:text-lg font-medium">
+
+                                        <div className="text-[#698467] text-sm sm:text-base md:text-lg font-medium">
                                             Welcome,
                                         </div>
 
-                            
-                                        <div className="relative h-14 w-14 rounded-full overflow-hidden border-2 border-white bg-gray-500 flex items-center justify-center">
+
+                                        <div className="relative h-14 w-14 rounded-full overflow-hidden border-2 border-white bg-[#698467] flex items-center justify-center">
                                             {user.profileImage ? (
                                                 <Image
                                                     src={user.profileImage}
@@ -540,7 +545,7 @@ const Header = () => {
                                                     unoptimized
                                                 />
                                             ) : (
-                                                <span className="text-black font-bold text-lg">
+                                                <span className="text-white font-bold text-lg">
                                                     {getInitials(user.name)}
                                                 </span>
                                             )}
@@ -550,7 +555,7 @@ const Header = () => {
                                     {/* Dropdown */}
                                     {dropdownOpen && (
                                         <div
-                                            className="absolute z-50 bg-white shadow-lg rounded-md font-functionPro cursor-pointer"
+                                            className="absolute z-50 bg-[#698467] shadow-lg rounded-md font-functionPro cursor-pointer"
                                             style={{
                                                 top: "calc(100% - 6px)",
                                                 right: 0,
@@ -565,7 +570,7 @@ const Header = () => {
                                                 }
                                             >
                                                 <button
-                                                    className="flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 cursor-pointer"
+                                                    className="flex items-center gap-2 px-4 py-2 w-full text-white rounded-lg transition-all duration-200 ease-in-out hover:bg-[#698467]/20 hover:text-white hover:scale-105 cursor-pointer"
                                                     onClick={() => setDropdownOpen(false)}
                                                 >
                                                     <LayoutDashboard className="h-4 w-4" />
@@ -574,10 +579,10 @@ const Header = () => {
                                             </Link>
 
                                             <button
-                                                className="flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 text-red-500 cursor-pointer"
+                                                className="flex items-center gap-2 px-4 py-2 w-full text-white rounded-lg transition-all duration-200 ease-in-out hover:bg-[#698467]/20 hover:text-white hover:scale-105 cursor-pointer"
                                                 onClick={handleLogout}
                                             >
-                                                <LogOut className="h-4 w-4" />
+                                                <LogOut className="h-4 w-4 transition-colors duration-200" />
                                                 Logout
                                             </button>
                                         </div>
@@ -618,7 +623,7 @@ const Header = () => {
                         </ul>
                     </div>
                 )}
-            </header>
+            </header >
 
             <Modal isOpen={loginModalOpen} onClose={() => setLoginModalOpen(false)}>
                 <Login onClose={() => setLoginModalOpen(false)} />

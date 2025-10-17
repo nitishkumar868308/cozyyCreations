@@ -4,19 +4,19 @@ import Link from "next/link"
 
 const Footer = () => {
     return (
-        <footer className="bg-[#161619] text-white ">
+        <footer className="bg-[#698467] text-white ">
             <div className="max-w-screen-2xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-8">
 
                 {/* Logo + Description */}
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-3">
                         <img
-                            src="/image/HWM LOGO 1 GREY 100.png"
+                            src="/image/80x80 logo.png"
                             alt="Logo"
                             className="h-24 w-24 object-contain"
                         />
                     </div>
-                    <p className="text-gray-400 text-sm md:text-base font-functionPro">
+                    <p className="text-white text-sm md:text-base font-functionPro">
                         Your ultimate destination for all things magical and mystical.<br />
                         Explore our collection and find everything you need to bring your spells and rituals to life.
                     </p>
@@ -73,18 +73,18 @@ const Footer = () => {
                     <div className="flex flex-col gap-3">
                         <h3 className="text-lg mb-3">Get In Touch</h3>
 
-                        <div className="flex items-center gap-2 text-gray-300 hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <MapPin className="h-5 w-5" />
                             <span>27 Deepali, Pitampura, New Delhi 90210</span>
 
                         </div>
 
-                        <div className="flex items-center gap-2 text-gray-300 hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <Mail className="h-5 w-5" />
-                            <span>healingherbsoilsshop@gmail.com</span>
+                            <span>cozyyCreations@gmail.com</span>
                         </div>
 
-                        <div className="flex items-center gap-2 text-gray-300 hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <Phone className="h-5 w-5" />
                             <span>+91 9717033830</span>
                         </div>
@@ -115,8 +115,8 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-700 mt-6 py-4 text-center text-gray-400 text-sm font-functionPro">
-                &copy; {new Date().getFullYear()} Hecate Wizard Mall. All rights reserved.
+            <div className="border-t border-white mt-6 py-4 text-center text-white text-sm font-functionPro">
+                &copy; {new Date().getFullYear()} Cozyy Creations. All rights reserved.
             </div>
         </footer>
     );

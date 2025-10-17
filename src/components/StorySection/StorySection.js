@@ -28,7 +28,7 @@ const StorySection = () => {
     const activeVideos = videos.filter((video) => video.active);
 
     return (
-        <div className="bg-gray-50 py-6 px-4">
+        <div className="bg-white py-6 px-4">
             <h2 className="text-2xl mb-6 font-functionPro">Stories</h2>
 
             <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide px-1">

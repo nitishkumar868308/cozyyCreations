@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       <body className={`${firaSans.variable} ${firaCode.variable} antialiased`}>
         <Provider store={store}>
           {!hideLayout && <DefaultPage />}
-          <main className="pt-[60px] md:pt-0">
+          <main className="s:pt-40 md:pt-0">
             {children}
           </main>
           {!hideLayout && <Footer />}
