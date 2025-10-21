@@ -35,7 +35,7 @@ export const fetchAllProducts = createAsyncThunk(
     "products/fetchAllProducts",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get("/api/products/all"); // your new endpoint
+            const response = await axios.get("/api/products/all");
             return response.data;
         } catch (err) {
             return rejectWithValue(err.response?.data || "Failed to fetch all products");
@@ -124,6 +124,7 @@ const productsSlice = createSlice({
     name: "products",
     initialState: {
         products: [],
+        fastProducts: [],
         loading: false,
         error: null,
     },
@@ -136,7 +137,7 @@ const productsSlice = createSlice({
             })
             .addCase(fetchFastProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.products = action.payload;
+                state.fastProducts = action.payload;
             })
             .addCase(fetchFastProducts.rejected, (state, action) => {
                 state.loading = false;
@@ -150,7 +151,7 @@ const productsSlice = createSlice({
             })
             .addCase(fetchAllProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.products = action.payload; // replace current products with all products
+                state.products = action.payload;
             })
             .addCase(fetchAllProducts.rejected, (state, action) => {
                 state.loading = false;

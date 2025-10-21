@@ -53,27 +53,84 @@
 //     }
 // }
 
+// import { PrismaClient } from "@prisma/client";
+// import { convertProductsFast } from "@/lib/priceConverter";
+
+// const prisma = new PrismaClient();
+// let countryPricingCache = {};
+// let productCache = {}; // cache per page + country
+
+// export async function GET(req) {
+//     try {
+//         const countryCode = (req.headers.get("x-country") || "IN").toUpperCase();
+//         const url = new URL(req.url);
+//         const page = Number(url.searchParams.get("page") || 1);
+//         const limit = Number(url.searchParams.get("limit") || 50);
+//         const skip = (page - 1) * limit;
+
+//         const cacheKey = `${countryCode}-page${page}-limit${limit}`;
+//         if (productCache[cacheKey]) {
+//             return new Response(JSON.stringify(productCache[cacheKey]), { status: 200 });
+//         }
+
+//         // Cache country pricing
+//         if (!countryPricingCache[countryCode]) {
+//             const countryPricingList = await prisma.countryPricing.findMany({
+//                 where: { deleted: 0, active: true },
+//             });
+//             countryPricingCache[countryCode] = countryPricingList;
+//         }
+
+//         // Fetch only necessary fields
+//         const products = await prisma.product.findMany({
+//             where: { deleted: 0, active: true },
+//             skip,
+//             take: limit,
+//             select: {
+//                 id: true,
+//                 name: true,
+//                 price: true,
+//                 image: true,
+//                 active: true,
+//                 createdAt: true,
+//             },
+//         });
+
+//         const updatedProducts = await convertProductsFast(
+//             products,
+//             countryCode,
+//             countryPricingCache[countryCode]
+//         );
+
+//         productCache[cacheKey] = updatedProducts;
+//         return new Response(JSON.stringify(updatedProducts), { status: 200 });
+//     } catch (error) {
+//         console.error("Error fetching products:", error);
+//         return new Response(
+//             JSON.stringify({ message: "Failed to fetch products", error: error.message }),
+//             { status: 500 }
+//         );
+//     }
+// }
+
 import { PrismaClient } from "@prisma/client";
 import { convertProductsFast } from "@/lib/priceConverter";
 
 const prisma = new PrismaClient();
 let countryPricingCache = {};
-let productCache = {}; // cache per page + country
+let productCache = {};
 
 export async function GET(req) {
     try {
         const countryCode = (req.headers.get("x-country") || "IN").toUpperCase();
-        const url = new URL(req.url);
-        const page = Number(url.searchParams.get("page") || 1);
-        const limit = Number(url.searchParams.get("limit") || 50);
-        const skip = (page - 1) * limit;
+        const cacheKey = `${countryCode}-allProducts`;
 
-        const cacheKey = `${countryCode}-page${page}-limit${limit}`;
+        // ✅ Return from cache if already loaded
         if (productCache[cacheKey]) {
             return new Response(JSON.stringify(productCache[cacheKey]), { status: 200 });
         }
 
-        // Cache country pricing
+        // ✅ Load & cache country pricing
         if (!countryPricingCache[countryCode]) {
             const countryPricingList = await prisma.countryPricing.findMany({
                 where: { deleted: 0, active: true },
@@ -81,11 +138,9 @@ export async function GET(req) {
             countryPricingCache[countryCode] = countryPricingList;
         }
 
-        // Fetch only necessary fields
+        // ✅ Fetch all products with their category + subcategory
         const products = await prisma.product.findMany({
-            where: { deleted: 0 },
-            skip,
-            take: limit,
+            where: { deleted: 0, active: true },
             select: {
                 id: true,
                 name: true,
@@ -93,16 +148,25 @@ export async function GET(req) {
                 image: true,
                 active: true,
                 createdAt: true,
+                category: {
+                    select: { id: true, name: true, active: true },
+                },
+                subcategory: {
+                    select: { id: true, name: true, active: true },
+                },
             },
         });
 
+        // ✅ Convert prices according to country
         const updatedProducts = await convertProductsFast(
             products,
             countryCode,
             countryPricingCache[countryCode]
         );
 
+        // ✅ Cache result
         productCache[cacheKey] = updatedProducts;
+
         return new Response(JSON.stringify(updatedProducts), { status: 200 });
     } catch (error) {
         console.error("Error fetching products:", error);
@@ -112,4 +176,3 @@ export async function GET(req) {
         );
     }
 }
-
