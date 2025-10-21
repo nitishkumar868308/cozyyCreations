@@ -33,7 +33,7 @@ const TestMonial = () => {
   return (
     <section className="bg-white py-16 px-4 md:px-8 lg:px-16 font-functionPro">
       <div className=" mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+        <h2 className="text-3xl md:text-6xl  text-[#4b5c46] mb-12" style={{ fontFamily: "Stalemate, cursive" }}>
           What Our Clients Say
         </h2>
 

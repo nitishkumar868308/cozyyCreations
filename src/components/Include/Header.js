@@ -235,7 +235,7 @@ const Header = () => {
                         </ul>
                     </nav> */}
 
-                    <nav className="hidden md:flex flex-1 justify-center relative">
+                    <nav className="hidden md:flex flex-1 justify-center relative  text-2xl md:text-3xl"  style={{ fontFamily: "Stalemate, cursive" }}>
                         <ul className="flex items-center gap-6">
                             {menuItems.map((item) => {
                                 const href = item === "Home" ? "/" : `/${item.toLowerCase()}`;
@@ -245,12 +245,14 @@ const Header = () => {
                                     <li
                                         key={item}
                                         className="relative"
+                                                 
                                         onMouseEnter={() => setOpenItem(item)}
                                         onMouseLeave={() => setOpenItem(null)}
                                     >
                                         <Link
                                             href={href}
-                                            className={`font-functionPro px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
+                                  
+                                            className={` px-3 py-1 md:px-5 md:py-1 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
                                             ${isActive
                                                     ? "bg-[#698467]/80 text-white shadow-inner"
                                                     : "text-[#698467] hover:bg-[#698467]/10 hover:scale-105"

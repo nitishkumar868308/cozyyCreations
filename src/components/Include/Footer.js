@@ -75,18 +75,18 @@ const Footer = () => {
 
                         <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <MapPin className="h-5 w-5" />
-                            <span>27 Deepali, Pitampura, New Delhi 90210</span>
+                            <span>27 Deepali, Pitampura, New Delhi 110034</span>
 
                         </div>
 
                         <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <Mail className="h-5 w-5" />
-                            <span>cozyyCreations@gmail.com</span>
+                            <span>kakullieajain@gmail.com</span>
                         </div>
 
                         <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
                             <Phone className="h-5 w-5" />
-                            <span>+91 9717033830</span>
+                            <span>+91 9355135307</span>
                         </div>
                     </div>
 

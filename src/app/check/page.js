@@ -1214,7 +1214,7 @@ const Page = () => {
         <div className="bg-white min-h-screen flex flex-col py-6 px-4 sm:px-6 lg:px-10">
             {/* Heading */}
             <div className="w-full text-left">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4b5c46] relative inline-block mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl  text-[#4b5c46] relative inline-block mb-6" style={{ fontFamily: "Stalemate, cursive" }}>
                     Our Products
                     <span className="absolute left-0 -bottom-2 w-full h-1.5 bg-[#698467] rounded-full origin-left" />
                 </h1>

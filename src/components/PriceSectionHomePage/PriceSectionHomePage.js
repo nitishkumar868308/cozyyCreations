@@ -33,7 +33,8 @@ const PriceSectionHomePage = () => {
             <div className=" mx-auto px-4 sm:px-6 lg:px-10">
                 {/* ================== Section Heading ================== */}
                 <motion.h2
-                    className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#4b5c46] tracking-wide relative inline-block mb-12"
+                    className="text-center text-3xl sm:text-4xl md:text-6xl  text-[#4b5c46] tracking-wide relative inline-block mb-12"
+                    style={{ fontFamily: "Stalemate, cursive" }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
