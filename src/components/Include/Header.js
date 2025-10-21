@@ -262,8 +262,33 @@ const Header = () => {
                                         {/* Dropdown only for Categories */}
                                         {
                                             item === "Categories" && openItem === "Categories" && (
-                                                <div className="absolute left-1/2 transform -translate-x-[48%]
- top-full mt-1 w-[1400px] bg-[#161619] text-white shadow-lg py-8 px-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 z-50">
+                                                //                                                 <div className="absolute left-1/2 transform -translate-x-[48%]
+                                                //  top-full mt-1 w-[1400px] bg-[#161619] text-white shadow-lg py-8 px-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 z-50">
+                                                <div
+                                                    className="
+                                                        absolute
+                                                        left-1/2
+                                                        -translate-x-1/2
+                                                        top-full
+                                                        mt-3
+                                                        bg-[#161619]
+                                                        text-white
+                                                        shadow-2xl
+                                                        rounded-xl
+                                                        py-8
+                                                        px-8
+                                                        grid
+                                                        sm:grid-cols-2
+                                                        md:grid-cols-3
+                                                        lg:grid-cols-3
+                                                        gap-6
+                                                        z-50
+                                                        w-[90vw] sm:w-[600px] md:w-[720px] lg:w-[950px] xl:w-[1100px]
+                                                        max-w-[95vw]
+                                                        mx-auto
+                                                    "
+                                                    >
+
                                                     {mappedCategories.map((cat, index) => {
                                                         console.log("cat?.img", cat?.img)
                                                         const imgSrc = cat?.img
@@ -511,9 +536,9 @@ const Header = () => {
                             {!user ? (
                                 <button
                                     onClick={() => setLoginModalOpen(true)}
-                                    className="flex items-center gap-2 cursor-pointer hover:text-blue-400 transition text-white font-functionPro"
+                                    className="flex items-center text-[#698467] gap-2 cursor-pointer hover:text-green-800 transition font-functionPro"
                                 >
-                                    <User className="h-6 w-6" />
+                                    <User className="h-6 w-6 " />
                                     <span className="hidden md:inline font-medium">Login</span>
                                 </button>
                             ) : (
@@ -595,7 +620,7 @@ const Header = () => {
 
                         {/* Hamburger for mobile */}
                         <button
-                            className="md:hidden cursor-pointer text-white"
+                            className="md:hidden cursor-pointer text-[#698467"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         >
                             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -612,8 +637,8 @@ const Header = () => {
                                     <button
                                         onClick={() => handleMenuClick(item)}
                                         className={`w-full text-left px-3 py-2 rounded-lg font-medium transition cursor-pointer ${active === item
-                                            ? "bg-white text-[#161619]"
-                                            : "text-white hover:bg-gray-700"
+                                            ? "bg-[#698467] text-white"
+                                            : "text-[#698467] hover:bg-gray-700"
                                             }`}
                                     >
                                         {item}
