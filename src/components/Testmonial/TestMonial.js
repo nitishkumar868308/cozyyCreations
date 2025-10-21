@@ -25,7 +25,7 @@ const TestMonial = () => {
     {
       name: "Amit Verma",
       role: "Freelancer",
-      text: "I loved the comfort and usability the most. For the price, it’s absolutely value for money.",
+      text: "I loved the comfort and usability the most. For the price, its absolutely value for money.",
       image: "https://randomuser.me/api/portraits/men/55.jpg",
     },
   ];
@@ -53,7 +53,7 @@ const TestMonial = () => {
                   <FaQuoteLeft className="text-blue-500 text-4xl" />
                 </div>
                 <p className="text-gray-700 mb-8 italic text-base md:text-lg leading-relaxed">
-                  "{item.text}"
+                  {item.text}
                 </p>
                 <img
                   src={item.image}
