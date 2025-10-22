@@ -9,12 +9,6 @@ const nextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
-        pathname: '/uploads/**',
-      },
-      {
         protocol: 'https',
         hostname: 'cozyycreations.com',
         port: '',
