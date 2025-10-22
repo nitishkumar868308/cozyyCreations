@@ -20,10 +20,10 @@ const nextConfig = {
         port: '3000',
         pathname: '/uploads/**',
       },
-      // once you have a domain, you can keep this too
+      
       {
         protocol: 'https',
-        hostname: 'hecatewizardmall.com',
+        hostname: 'cozyycreations.com',
         port: '',
         pathname: '/uploads/**',
       },
