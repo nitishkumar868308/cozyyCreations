@@ -235,7 +235,7 @@ const Header = () => {
                         </ul>
                     </nav> */}
 
-                    <nav className="hidden md:flex flex-1 justify-center relative  text-2xl md:text-3xl"  style={{ fontFamily: "Stalemate, cursive" }}>
+                    <nav className="hidden md:flex flex-1 justify-center relative  "  >
                         <ul className="flex items-center gap-6">
                             {menuItems.map((item) => {
                                 const href = item === "Home" ? "/" : `/${item.toLowerCase()}`;
@@ -244,15 +244,15 @@ const Header = () => {
                                 return (
                                     <li
                                         key={item}
-                                        className="relative"
-                                                 
+                                        className="relative "
+
                                         onMouseEnter={() => setOpenItem(item)}
                                         onMouseLeave={() => setOpenItem(null)}
                                     >
                                         <Link
                                             href={href}
-                                  
-                                            className={` px-3 py-1 md:px-5 md:py-1 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
+                                            style={{ fontFamily: "Stalemate, cursive" }}
+                                            className={`text-2xl md:text-3xl px-3 py-1 md:px-5 md:py-1 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
                                             ${isActive
                                                     ? "bg-[#698467]/80 text-white shadow-inner"
                                                     : "text-[#698467] hover:bg-[#698467]/10 hover:scale-105"
@@ -272,7 +272,7 @@ const Header = () => {
                                                         left-1/2
                                                         -translate-x-1/2
                                                         top-full
-                                                        mt-3
+                                                        mt-2
                                                         bg-[#161619]
                                                         text-white
                                                         shadow-2xl
@@ -289,7 +289,7 @@ const Header = () => {
                                                         max-w-[95vw]
                                                         mx-auto
                                                     "
-                                                    >
+                                                >
 
                                                     {mappedCategories.map((cat, index) => {
                                                         console.log("cat?.img", cat?.img)
@@ -300,18 +300,19 @@ const Header = () => {
 
                                                         return (
                                                             <div
+                                                                style={{ fontFamily: "Stalemate, cursive" }}
                                                                 key={cat.id || `${cat.name}-${index}`}
                                                                 className="flex items-start gap-6 border-b border-gray-700 pb-6 last:border-0"
                                                             >
 
                                                                 <div className="flex-1">
-                                                                    <h3 className=" text-lg mb-3 font-functionPro">{cat.name}</h3>
+                                                                    <h3 className="mb-3 text-2xl md:text-4xl ">{cat.name}</h3>
                                                                     <ul className="space-y-2">
                                                                         {cat.sub.map((sub) => (
                                                                             <li key={sub}>
                                                                                 <Link
                                                                                     href={`/categories?category=${encodeURIComponent(cat.name)}&&subcategory=${encodeURIComponent(sub)}`}
-                                                                                    className="text-gray-300 hover:text-white transition font-functionPro"
+                                                                                    className="text-2xl md:text-3xl text-gray-300 hover:text-white transition "
                                                                                 >
                                                                                     {sub}
                                                                                 </Link>

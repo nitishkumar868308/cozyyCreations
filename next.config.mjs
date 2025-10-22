@@ -15,13 +15,6 @@ const nextConfig = {
         pathname: '/uploads/**',
       },
       {
-        protocol: 'http',
-        hostname: '31.97.62.1',
-        port: '3000',
-        pathname: '/uploads/**',
-      },
-      
-      {
         protocol: 'https',
         hostname: 'cozyycreations.com',
         port: '',

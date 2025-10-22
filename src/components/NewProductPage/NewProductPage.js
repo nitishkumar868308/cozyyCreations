@@ -184,8 +184,12 @@ const NewProductPage = () => {
                 className="text-4xl md:text-6xl text-[#4b5c46] mb-12 text-center"
                 style={fontStyle}
             >
-                ✨ New Arrivals
+                <span className="relative inline-block">
+                    ✨ New Arrivals
+                    <span className="absolute left-0 bottom-0 w-full h-1.5 bg-[#698467] rounded-full origin-center" />
+                </span>
             </h1>
+
 
             {products?.length === 0 ? (
                 <p className="text-center text-gray-600 text-lg" style={fontStyle}>

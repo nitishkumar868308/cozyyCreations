@@ -198,6 +198,7 @@ const AddSubcategory = () => {
                                                     alt={s.name || "Subcategory"}
                                                     fill
                                                     className="object-cover rounded-md"
+                                                    unoptimized
                                                 />
                                             </div>
                                         ) : (

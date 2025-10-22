@@ -33,9 +33,16 @@ const TestMonial = () => {
   return (
     <section className="bg-white py-16 px-4 md:px-8 lg:px-16 font-functionPro">
       <div className=" mx-auto text-center">
-        <h2 className="text-3xl md:text-6xl  text-[#4b5c46] mb-12" style={{ fontFamily: "Stalemate, cursive" }}>
-          What Our Clients Say
+        <h2
+          className="text-3xl md:text-6xl text-[#4b5c46] mb-12 text-center"
+          style={{ fontFamily: "Stalemate, cursive" }}
+        >
+          <span className="relative inline-block">
+            What Our Clients Say
+            <span className="absolute left-0 bottom-0 w-full h-1.5 bg-[#698467] rounded-full origin-center" />
+          </span>
         </h2>
+
 
         <Swiper
           modules={[Autoplay, Pagination]}

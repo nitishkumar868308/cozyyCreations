@@ -29,7 +29,16 @@ const StorySection = () => {
 
     return (
         <div className="bg-white py-6 px-4">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl mb-2 text-[#4b5c46]" style={{ fontFamily: "Stalemate, cursive" }}>Stories</h2>
+            <h2
+                className="text-3xl sm:text-4xl md:text-6xl mb-2 text-center text-[#4b5c46]"
+                style={{ fontFamily: "Stalemate, cursive" }}
+            >
+                <span className="relative inline-block">
+                    Stories
+                    <span className="absolute left-0 bottom-0 w-full h-1.5 bg-[#698467] rounded-full origin-center" />
+                </span>
+            </h2>
+
 
             <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide px-1">
                 {activeVideos.map((story) => (

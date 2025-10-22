@@ -33,22 +33,30 @@ const PriceSectionHomePage = () => {
             <div className=" mx-auto px-4 sm:px-6 lg:px-10">
                 {/* ================== Section Heading ================== */}
                 <motion.h2
-                    className="text-center text-3xl sm:text-4xl md:text-6xl  text-[#4b5c46] tracking-wide relative inline-block mb-12"
+                    className="relative text-center text-3xl sm:text-4xl md:text-6xl text-[#4b5c46] tracking-wide mb-12 "
                     style={{ fontFamily: "Stalemate, cursive" }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true, amount: 0.5 }}
                 >
-                    Our Pricing
-                    <motion.span
-                        className="absolute left-0 -bottom-2 w-full h-1.5 bg-[#698467] rounded-full origin-left"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
-                    />
+                    {/* Wrap text in a span to position the underline relative to it */}
+                    <span className="relative inline-block">
+                        Our Pricing
+                        <motion.span
+                            className="absolute left-0 bottom-0 h-1.5 bg-[#698467] rounded-full origin-center"
+                            style={{ width: "100%" }}
+                            initial={{ scaleX: 0 }}
+                            whileInView={{ scaleX: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.5 }}
+                        />
+                    </span>
                 </motion.h2>
+
+
+
+
 
                 {/* ================== Cards ================== */}
                 <div className="flex flex-col md:flex-row gap-8 md:gap-10">

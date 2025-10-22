@@ -1214,11 +1214,17 @@ const Page = () => {
         <div className="bg-white min-h-screen flex flex-col py-6 px-4 sm:px-6 lg:px-10">
             {/* Heading */}
             <div className="w-full text-left">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl  text-[#4b5c46] relative inline-block mb-6" style={{ fontFamily: "Stalemate, cursive" }}>
-                    Our Products
-                    <span className="absolute left-0 -bottom-2 w-full h-1.5 bg-[#698467] rounded-full origin-left" />
+                <h1
+                    className="text-3xl sm:text-4xl md:text-6xl text-[#4b5c46] relative text-center mb-6"
+                    style={{ fontFamily: "Stalemate, cursive" }}
+                >
+                    <span className="relative inline-block">
+                        Our Products
+                        <span className="absolute left-0 bottom-0 w-full h-1.5 bg-[#698467] rounded-full origin-center" />
+                    </span>
                 </h1>
             </div>
+
 
             {/* Main Layout */}
             <div className="flex flex-col md:flex-row flex-1 gap-6 h-auto md:h-full">
