@@ -295,6 +295,7 @@ const AddTag = () => {
                                         alt={editTag.name || "Tag"}
                                         fill
                                         className="object-cover rounded-md"
+                                        unoptimized
                                     />
 
                                 </div>
