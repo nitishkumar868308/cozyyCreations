@@ -183,7 +183,7 @@ const Header = () => {
                     <div className="flex items-center gap-2">
                         <Link href="/">
                             <img
-                                src="/image/NEW COZYY CREATINS LOGO.png"
+                                src="/image/NEW COZYY CREATINS LOGO (1).png"
                                 alt="Logo"
                                 className="h-20 w-24 object-contain"
                             />
