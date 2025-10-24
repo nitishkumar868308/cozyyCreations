@@ -272,7 +272,7 @@ const AddTag = () => {
                         {(editTag.image || newImage) && (
                             <div className="mb-4">
                                 <div className="relative w-24 h-24">
-                                    <Image
+                                    {/* <Image
                                         src={
                                             newImage
                                                 ? URL.createObjectURL(newImage)
@@ -283,7 +283,20 @@ const AddTag = () => {
                                         alt={editTag.name || "Tag"}
                                         fill
                                         className="object-cover rounded-md"
+                                    /> */}
+                                    <Image
+                                        src={
+                                            newImage
+                                                ? URL.createObjectURL(newImage)
+                                                : editTag.image && typeof editTag.image === "string" && editTag.image.startsWith("http")
+                                                    ? editTag.image
+                                                    : `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}${editTag.image || "/fallback.jpg"}`
+                                        }
+                                        alt={editTag.name || "Tag"}
+                                        fill
+                                        className="object-cover rounded-md"
                                     />
+
                                 </div>
                             </div>
                         )}
