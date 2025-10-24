@@ -176,14 +176,14 @@ const Header = () => {
     console.log("baseUrl", baseUrl)
     return (
         <>
-            <header className="w-full bg-white shadow-md md:relative fixed md:static top-0 z-50">
+            <header className="w-full bg-[#162a33] shadow-md md:relative fixed md:static top-0 z-50">
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between px-6 py-3">
 
                     {/* Logo */}
                     <div className="flex items-center gap-2">
                         <Link href="/">
                             <img
-                                src="/image/80x80 logo.png"
+                                src="/image/NEW COZYY CREATINS LOGO.png"
                                 alt="Logo"
                                 className="h-20 w-24 object-contain"
                             />
@@ -251,11 +251,11 @@ const Header = () => {
                                     >
                                         <Link
                                             href={href}
-                                            style={{ fontFamily: "Stalemate, cursive" }}
-                                            className={`text-2xl md:text-3xl px-3 py-1 md:px-5 md:py-1 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
+                                            // style={{ fontFamily: "Stalemate, cursive" }}
+                                            className={`font-cinzel text-xl md:text-xl px-3 py-1 md:px-5 md:py-1 rounded-lg font-medium transition-all duration-200 ease-in-out cursor-pointer
                                             ${isActive
-                                                    ? "bg-[#698467]/80 text-white shadow-inner"
-                                                    : "text-[#698467] hover:bg-[#698467]/10 hover:scale-105"
+                                                    ? "bg-[#265157]/80 text-[#f3ce8e] shadow-inner"
+                                                    : "text-[#f3ce8e] hover:bg-[#698467]/10 hover:scale-105"
                                                 }`}
                                         >
                                             {item}
@@ -413,8 +413,8 @@ const Header = () => {
                     <div className="font-functionPro  flex items-center gap-4 md:gap-6">
                         <SearchPage />
 
-                        <button onClick={() => setIsOpen(true)} className="relative cursor-pointer">
-                            <ShoppingCart className="h-6 w-6 text-[#698467]" />
+                        <button onClick={() => setIsOpen(true)} className="relative cursor-pointer font-cinzel">
+                            <ShoppingCart className="h-6 w-6 text-[#f3ce8e]" />
                             {userCartCount > 0 && (
                                 <span className="absolute -top-2 -right-2 bg-red-500 text-[#698467] text-xs px-1.5 py-0.5 rounded-full">
                                     {userCartCount}
@@ -558,12 +558,12 @@ const Header = () => {
                                     </div> */}
                                     <div className="flex items-center gap-3 cursor-pointer group">
 
-                                        <div className="text-[#698467] text-sm sm:text-base md:text-lg font-medium">
+                                        <div className="text-[#f3ce8e] text-sm sm:text-base md:text-lg font-medium font-cinzel">
                                             Welcome,
                                         </div>
 
 
-                                        <div className="relative h-14 w-14 rounded-full overflow-hidden border-2 border-white bg-[#698467] flex items-center justify-center">
+                                        <div className="relative h-14 w-14 rounded-full overflow-hidden border-2 border-[#102129] bg-[#102129] flex items-center justify-center">
                                             {user.profileImage ? (
                                                 <Image
                                                     src={user.profileImage}
@@ -573,7 +573,7 @@ const Header = () => {
                                                     unoptimized
                                                 />
                                             ) : (
-                                                <span className="text-white font-bold text-lg">
+                                                <span className="text-[#f3ce8e] font-bold text-lg font-cinzel">
                                                     {getInitials(user.name)}
                                                 </span>
                                             )}

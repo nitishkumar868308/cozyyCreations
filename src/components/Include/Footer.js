@@ -4,26 +4,26 @@ import Link from "next/link"
 
 const Footer = () => {
     return (
-        <footer className="bg-[#698467] text-white ">
+        <footer className="bg-[#162a33] text-[#f3ce8e] ">
             <div className="max-w-screen-2xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-8">
 
                 {/* Logo + Description */}
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-3">
                         <img
-                            src="/image/80x80 logo.png"
+                            src="/image/NEW COZYY CREATINS LOGO.png"
                             alt="Logo"
                             className="h-24 w-24 object-contain"
                         />
                     </div>
-                    <p className="text-white text-sm md:text-base font-functionPro">
+                    <p className="text-[#f3ce8e] text-sm md:text-base font-cinzel">
                         Your ultimate destination for all things magical and mystical.<br />
                         Explore our collection and find everything you need to bring your spells and rituals to life.
                     </p>
                 </div>
 
                 {/* Quick Links */}
-                <div className="flex flex-col gap-3 font-functionPro">
+                <div className="flex flex-col gap-3 font-cinzel">
                     <h3 className="text-lg mb-3">Quick Links</h3>
                     <ul className="flex flex-col gap-2">
                         {[
@@ -46,7 +46,7 @@ const Footer = () => {
                 </div>
 
                 {/* Policy Links */}
-                <div className="flex flex-col gap-3 font-functionPro">
+                <div className="flex flex-col gap-3 font-cinzel">
                     <h3 className="text-lg mb-3">Policy</h3>
                     <ul className="flex flex-col gap-2">
                         {[
@@ -68,23 +68,23 @@ const Footer = () => {
                 </div>
 
                 {/* Contact / Follow */}
-                <div className="flex flex-col gap-4 font-functionPro">
+                <div className="flex flex-col gap-4 font-cinzel">
                     {/* Get In Touch */}
                     <div className="flex flex-col gap-3">
                         <h3 className="text-lg mb-3">Get In Touch</h3>
 
-                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-[#f3ce8e] hover:text-gray-100 transition cursor-pointer">
                             <MapPin className="h-5 w-5" />
                             <span>27 Deepali, Pitampura, New Delhi 110034</span>
 
                         </div>
 
-                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-[#f3ce8e] hover:text-gray-100 transition cursor-pointer">
                             <Mail className="h-5 w-5" />
                             <span>kakullieajain@gmail.com</span>
                         </div>
 
-                        <div className="flex items-center gap-2 text-white hover:text-gray-100 transition cursor-pointer">
+                        <div className="flex items-center gap-2 text-[#f3ce8e] hover:text-gray-100 transition cursor-pointer">
                             <Phone className="h-5 w-5" />
                             <span>+91 9355135307</span>
                         </div>
@@ -107,7 +107,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center text-gray-100 space-y-2">
+            <div className="text-center text-[#f3ce8e] space-y-2 font-cinzel">
                 <h3 className="text-lg font-semibold">Disclaimer</h3>
                 <p className="text-sm font-light asd">
                     Results are not guaranteed, and we do not assure any specific outcomes.
@@ -115,7 +115,7 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-white mt-6 py-4 text-center text-white text-sm font-functionPro">
+            <div className="border-t border-white mt-6 py-4 text-center text-[#f3ce8e] text-sm font-cinzel">
                 &copy; {new Date().getFullYear()} Cozyy Creations. All rights reserved.
             </div>
         </footer>

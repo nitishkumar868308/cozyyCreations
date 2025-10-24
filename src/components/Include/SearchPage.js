@@ -81,7 +81,7 @@ const SearchPage = () => {
         <>
             {/* Search Button */}
             <button
-                className="flex items-center gap-2 cursor-pointer hover:text-grren-800 transition text-[#698467] font-medium"
+                className="font-cinzel flex items-center gap-2 cursor-pointer hover:text-grren-800 transition text-[#f3ce8e] font-medium"
                 onClick={() => setOpen(true)}
             >
                 <Search className="h-6 w-6" />

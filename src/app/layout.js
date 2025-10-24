@@ -1,6 +1,6 @@
 "use client";
 
-import { Fira_Sans, Fira_Code } from "next/font/google";
+import { Fira_Sans, Fira_Code,  } from "next/font/google";
 import "./globals.css";
 import DefaultPage from "@/components/Include/DefaultPage";
 import Footer from "@/components/Include/Footer";
@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Stalemate&display=swap" rel="stylesheet" />
+        
       </head>
       <body className={`${firaSans.variable} ${firaCode.variable} antialiased`}>
         <Provider store={store}>
