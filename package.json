@@ -33,7 +33,6 @@
     "formik": "^2.4.6",
     "framer-motion": "^12.23.12",
     "heroicons": "^2.2.0",
-    "iron-session": "^6.3.1",
     "jsonwebtoken": "^9.0.2",
     "libphonenumber-js": "^1.12.24",
     "lucide-react": "^0.542.0",
